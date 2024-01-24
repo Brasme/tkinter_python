@@ -1,7 +1,7 @@
 # About
 
-Simple txinter and periodic timer test app
+Simple tkinter and periodic timer test app just to illustrate some basics
 
 Keywords: class, event, tkinter, callback, complex, canvas, deepcopy vs copy by ref
 
-No copy restrictions - and no warenties about correctness - if used it is by free will with no warrenty
+No copy restrictions -  no warrenties about correctness
