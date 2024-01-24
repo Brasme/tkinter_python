@@ -105,7 +105,7 @@ class App(object):
         self._state="out"
         self.mousePos=Complex(0,0)
         self._mousePos=Complex(0,0) # Previous/old point
-        self.in_count=0
+        self._in_count=0
 
         self._win.bind('<Motion>',self._on_mouse_motion)
         self._win.bind("<Enter>", self._on_mouse_enter)
@@ -129,7 +129,7 @@ class App(object):
         self.mousePos = Complex(event.x, event.y)
         self._on_notify("motion")
         self._draw()
-        self.in_count += 1
+        self._in_count += 1
 
     def _on_mouse_enter(self,event):
         self._state="in"
@@ -144,14 +144,14 @@ class App(object):
         self._state="out" 
         self._on_notify("leave")
         self._draw()
-        self.in_count=-1
+        self._in_count=-1
     
     def _draw(self):
         green = "#476042"
         # d = self.mousePos.distance(self._mousePos)
         # x, y = (self.mousePos.re - 1), (self.mousePos.im - 1)
         # self._canvas.create_oval(x, y, x+2, y+2, fill=green)
-        if self.in_count<=0:
+        if self._in_count<=0:
             return
         p0=copy.deepcopy(self.mousePos)
         p1=copy.deepcopy(self._mousePos)
